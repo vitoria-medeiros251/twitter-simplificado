@@ -1,4 +1,4 @@
-# 🔐 Sistema de Autenticação JWT - Twitter Simplificado
+# 🔐 Sistema de Autenticação JWT - Twitter Simplificado (em andamento)
 
 Sistema de autenticação baseado em tokens JWT (JSON Web Token) para uma aplicação estilo Twitter, implementado com Spring Security.
 
@@ -71,3 +71,4 @@ O token contém:
 2. **Guarde o token**: Armazene no cliente (localStorage, cookie, etc)
 3. **Use em requisições**: Inclua no header `Authorization: Bearer <token>`
 4. **Renove quando expirar**: Faça login novamente após 5 minutos
+   
