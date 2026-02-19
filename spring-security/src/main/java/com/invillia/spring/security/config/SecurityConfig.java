@@ -43,6 +43,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST,"/users").permitAll()
                         .requestMatchers(HttpMethod.POST,"/login").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/tweets").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/tweets").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/tweets/**").authenticated()
                         .anyRequest().authenticated()) // todas as requisiçoes precisam de autenticacao
                 .csrf(csrf -> csrf.disable()) //Desabilita CSRF (Cross-Site Request Forgery) - comum em APIs REST stateless
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))// configura como resource server Oauth2 - valida tokens jwt nas requisiçoes /Usa as chaves RSA (publicKey/privateKey) para verificar se o token é válido
